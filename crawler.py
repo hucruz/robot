@@ -30,6 +30,9 @@ def spider(url, maxVisits):
             print url," Error:", e
 
 if __name__ == "__main__":
-    url = "http://nerds.ai"
-    maxVisits = 30
-    spider(url, maxVisits)
+    try:
+        url = sys.argv[1]
+        maxVisits = 30
+        spider(url, maxVisits)
+    except:
+        print "Usage: python",sys.argv[0],"[url]"
